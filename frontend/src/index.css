@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --bg-base: #F5EDE3;
+    --text-primary: #2C2218;
+    --text-secondary: #8B7E6E;
+    --dark-section: #2C2218;
+    --dark-section-text: #F5EDE3;
+    --card-bg: #FAF5EF;
+    --border-light: rgba(44, 34, 24, 0.1);
+    --cream: #F5EDE3;
+    --cream-light: #FBF7F2;
+    --cream-dark: #E8DDD0;
+    --warm-brown: #2C2218;
+    --warm-brown-soft: #8B7E6E;
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    font-family: 'Montserrat', system-ui, sans-serif;
+}
+
+::selection {
+    background: #2C2218;
+    color: #F5EDE3;
+}
+
+@layer base {
+    :root {
+        --radius: 0.5rem;
+    }
+}
+
+.font-serif-italic {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+}
+
+.display-head {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+}
+
+.display-head-sm {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.editorial-input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border-light);
+    border-radius: 0;
+    padding: 0.85rem 0;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.editorial-input:focus {
+    border-bottom-color: var(--text-primary);
+}
+
+.btn-animated {
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-animated:active {
+    transform: scale(0.96);
+}
+
+.x-decor {
+    width: 14px;
+    height: 14px;
+    position: relative;
+}
+.x-decor::before, .x-decor::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 14px;
+    height: 1.5px;
+    background: currentColor;
+}
+.x-decor::before { transform: rotate(45deg); }
+.x-decor::after  { transform: rotate(-45deg); }
+
+/* Grain texture overlay for dark sections */
+.grain {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    opacity: 0.4;
+}
+
+/* RTL direction for alternating timeline */
+.direction-rtl {
+    direction: rtl;
+}
+.direction-rtl > * {
+    direction: ltr;
+}
+
+/* Editorial input placeholder styling */
+.editorial-input::placeholder {
+    color: var(--warm-brown-soft);
+    opacity: 0.5;
+    font-weight: 300;
+}
+
