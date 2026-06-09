@@ -9,7 +9,7 @@ const links = [
   { label: "Contacts", href: "#contact" },
 ];
 
-export default function Navbar({ onBook, dark = false }) {
+export default function Navbar({ onBook, onEnroll, dark = false }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -60,6 +60,28 @@ export default function Navbar({ onBook, dark = false }) {
         </nav>
 
         <div className="flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-4 mr-4">
+            <button
+              onClick={onBook}
+              className={`text-[10px] uppercase tracking-[0.2em] font-medium border px-5 py-2.5 rounded-full transition-all duration-300 ${
+                dark && !scrolled
+                  ? "border-cream-light/40 text-cream-light hover:bg-cream-light hover:text-ink"
+                  : "border-ink/30 text-ink bg-base hover:bg-ink hover:text-cream"
+              }`}
+            >
+              Book Service
+            </button>
+            <button
+              onClick={onEnroll}
+              className={`text-[10px] uppercase tracking-[0.2em] font-medium border px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm ${
+                dark && !scrolled
+                  ? "border-cream-light text-ink bg-cream-light hover:bg-transparent hover:text-cream-light hover:border-cream-light hover:shadow-none"
+                  : "border-ink text-cream bg-ink hover:bg-transparent hover:text-ink hover:border-ink hover:shadow-none"
+              }`}
+            >
+              Enroll Training
+            </button>
+          </div>
           <button
             data-testid="nav-menu-toggle"
             onClick={() => setOpen((v) => !v)}

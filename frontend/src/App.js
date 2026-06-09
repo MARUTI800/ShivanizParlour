@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
+import TrainingPrograms from "@/components/TrainingPrograms";
 import Reviews from "@/components/Reviews";
 import Story from "@/components/Story";
 import Contact from "@/components/Contact";
@@ -13,6 +14,10 @@ import Footer from "@/components/Footer";
 function App() {
   const openBooking = () => {
     window.open("https://wa.me/917710235502?text=Hi%20Shivani'z%20Beauty%20Parlour,%20I%20would%20like%20to%20book%20an%20appointment.", "_blank");
+  };
+
+  const openEnrollment = () => {
+    window.open("https://wa.me/917710235502?text=Hi%20Shivani'z%20Beauty%20Parlour,%20I%20would%20like%20to%20enroll%20in%20a%20training%20program.", "_blank");
   };
 
   useEffect(() => {
@@ -42,11 +47,12 @@ function App() {
   return (
     <div className="App font-body bg-base text-ink">
       <Toaster position="top-center" richColors theme="light" />
-      <Navbar onBook={openBooking} dark />
+      <Navbar onBook={openBooking} onEnroll={openEnrollment} dark />
       <main>
-        <Hero onBook={openBooking} />
+        <Hero onBook={openBooking} onEnroll={openEnrollment} />
         <About />
         <Services onBook={openBooking} />
+        <TrainingPrograms onEnroll={openEnrollment} />
         <Reviews />
         <Story />
         <Contact />

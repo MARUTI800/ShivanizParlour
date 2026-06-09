@@ -4,7 +4,7 @@ import { scrollTo } from "../lib/scroll";
 
 const HERO_VID = "/media/IMG_7580.MP4";
 
-export default function Hero({ onBook }) {
+export default function Hero({ onBook, onEnroll }) {
   return (
     <section
       id="top"
@@ -61,14 +61,23 @@ export default function Hero({ onBook }) {
             </span>
           </h1>
 
-          <div className="mt-12 flex flex-col md:flex-row items-center gap-6">
+          <div className="mt-12 flex flex-col md:flex-row items-center gap-4">
             <button
               data-testid="hero-book-button"
               onClick={onBook}
-              className="btn-animated inline-flex items-center gap-3 bg-cream text-ink px-8 py-4 rounded-full font-body text-xs tracking-[0.2em] uppercase font-bold hover:bg-ink hover:text-cream transition-colors duration-500"
+              className="btn-animated inline-flex items-center gap-3 border border-cream/30 bg-transparent text-cream px-8 py-4 rounded-full font-body text-[10px] md:text-xs tracking-[0.2em] uppercase font-bold hover:bg-cream hover:text-ink transition-colors duration-500"
             >
-              Book an Appointment
+              Book Service
             </button>
+            <button
+              data-testid="hero-enroll-button"
+              onClick={onEnroll}
+              className="btn-animated inline-flex items-center gap-3 bg-cream text-ink border border-cream px-8 py-4 rounded-full font-body text-[10px] md:text-xs tracking-[0.2em] uppercase font-bold hover:bg-transparent hover:text-cream transition-colors duration-500"
+            >
+              Enroll Training
+            </button>
+          </div>
+          <div className="mt-8">
             <a
               href="#services"
               onClick={(e) => {
