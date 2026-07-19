@@ -4,10 +4,6 @@ import { Award } from "lucide-react";
 
 const certImages = [
   {
-    src: "/media/certi_1.jpeg",
-    alt: "Graduate receiving Shivani'z Activities Certificate",
-  },
-  {
     src: "/media/certi_2.jpeg",
     alt: "Batch of certified graduates with Shivani Passi",
   },
