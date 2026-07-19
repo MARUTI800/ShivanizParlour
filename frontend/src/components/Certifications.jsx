@@ -87,17 +87,17 @@ export default function Certifications() {
             }}
           >
             {/* Main Image Showcase */}
-            <div className="relative overflow-hidden rounded-sm">
+            <div className="relative overflow-hidden rounded-sm h-[280px] md:h-[360px] lg:h-[420px]">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={current}
                   src={certImages[current].src}
                   alt={certImages[current].alt}
-                  initial={{ opacity: 0, x: 40 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -40 }}
-                  transition={{ duration: 0.45, ease: [0.33, 1, 0.68, 1] }}
-                  className="w-full max-h-[280px] md:max-h-[360px] lg:max-h-[420px] object-contain mx-auto select-none"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="absolute inset-0 w-full h-full object-contain mx-auto select-none"
                   draggable={false}
                 />
               </AnimatePresence>
