@@ -6,6 +6,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import TrainingPrograms from "@/components/TrainingPrograms";
+import Certifications from "@/components/Certifications";
 import Reviews from "@/components/Reviews";
 import Story from "@/components/Story";
 import Contact from "@/components/Contact";
@@ -53,6 +54,7 @@ function App() {
         <About />
         <Services onBook={openBooking} />
         <TrainingPrograms onEnroll={openEnrollment} />
+        <Certifications />
         <Reviews />
         <Story />
         <Contact />
